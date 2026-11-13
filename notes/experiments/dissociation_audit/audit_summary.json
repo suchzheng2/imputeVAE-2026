@@ -1,0 +1,108 @@
+{
+  "n_total_genes": 10134,
+  "n_artifact_genes_in_data": 19,
+  "n_artifact_genes_total": 59,
+  "artifact_positive_delta": 18,
+  "artifact_negative_delta": 1,
+  "artifact_mean_delta": 1.2988747368421052,
+  "artifact_median_delta": 1.33845,
+  "all_genes_mean_delta": 0.5220014683244524,
+  "all_genes_median_delta": 0.400725,
+  "mann_whitney_U": 152015.5,
+  "mann_whitney_p": 6.297034030310873e-06,
+  "enrichment": [
+    {
+      "top_n": 50,
+      "artifact_count": 1,
+      "expected": 0.0937438326425893,
+      "fold_enrichment": 10.667368421052632,
+      "p_value": 0.08977151238752223,
+      "artifact_genes": [
+        "Egr1"
+      ]
+    },
+    {
+      "top_n": 100,
+      "artifact_count": 2,
+      "expected": 0.1874876652851786,
+      "fold_enrichment": 10.667368421052632,
+      "p_value": 0.014778698474471315,
+      "artifact_genes": [
+        "Egr1",
+        "Hsp90ab1"
+      ]
+    },
+    {
+      "top_n": 200,
+      "artifact_count": 3,
+      "expected": 0.3749753305703572,
+      "fold_enrichment": 8.000526315789473,
+      "p_value": 0.00581146105709406,
+      "artifact_genes": [
+        "Egr1",
+        "Hsp90ab1",
+        "Jund"
+      ]
+    },
+    {
+      "top_n": 500,
+      "artifact_count": 9,
+      "expected": 0.9374383264258931,
+      "fold_enrichment": 9.600631578947368,
+      "p_value": 9.569716738576546e-08,
+      "artifact_genes": [
+        "Dnaja1",
+        "Egr1",
+        "Hsp90aa1",
+        "Hsp90ab1",
+        "Hspa8",
+        "Hsph1",
+        "Ier5",
+        "Jund",
+        "Rhob"
+      ]
+    }
+  ],
+  "artifact_genes_missing_from_data": [
+    "Atf3",
+    "Btg2",
+    "Ccl2",
+    "Ccl3",
+    "Ccl4",
+    "Cd69",
+    "Cd83",
+    "Cst7",
+    "Ctgf",
+    "Cxcl1",
+    "Cxcl10",
+    "Cxcl2",
+    "Cyr61",
+    "Dnajb1",
+    "Dusp1",
+    "Dusp5",
+    "Dusp6",
+    "Egr2",
+    "Egr3",
+    "Egr4",
+    "Fos",
+    "Fosb",
+    "Gadd45b",
+    "Hspa1a",
+    "Hspa1b",
+    "Ier2",
+    "Ier3",
+    "Il1a",
+    "Il1b",
+    "Il6",
+    "Klf2",
+    "Klf4",
+    "Lpl",
+    "Maff",
+    "Nfkbia",
+    "Nr4a2",
+    "Nr4a3",
+    "Socs3",
+    "Spp1",
+    "Tnf"
+  ]
+}

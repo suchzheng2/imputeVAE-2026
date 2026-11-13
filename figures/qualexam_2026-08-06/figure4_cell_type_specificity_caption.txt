@@ -1,0 +1,11 @@
+Figure 4: ImputeVAE recovers cell-type-dependent transformation magnitudes.
+
+For each cell type c, the empirical correction magnitude D_empirical(c) is the mean across 10,134 genes of the absolute difference between observed whole-cell means and raw nucleus means in log1p(raw count) space. The predicted correction magnitude D_predicted(c) replaces observed cell means with method-predicted cell means.
+
+(A) Scatter plot of ImputeVAE-predicted versus empirical correction magnitudes for 17 cell types. Blue = neuronal (12 types); green = non-neuronal (5 types). Error bars: 95% bootstrap CIs (500 iterations, resampling cells and nuclei within each type). Dashed line = identity. Pearson r, Spearman rho, R-squared, and neuronal-to-non-neuronal magnitude ratios are reported.
+
+(B) Summary dot plot comparing D_predicted-vs-D_empirical correlation for ImputeVAE, scGen (global shift), and scButterfly (cross-modal translation). scGen and scButterfly were fitted on the full dataset (exploratory, full-data fit).
+
+(C) Paired-dot plot of D_empirical (black circles) and D_predicted (colored squares) for each cell type, sorted by D_empirical. Connecting lines visualize over- or under-correction. Label colors: blue = neuronal, green = non-neuronal.
+
+Data partition: All analyses use the full working dataset (71,117 cells, 40,166 nuclei). ImputeVAE was trained on 60% of nuclei; predictions cover all nuclei. Comparison methods were fitted on the full dataset. Validation cell and nuclei sample counts per cell type are provided in the data CSV.

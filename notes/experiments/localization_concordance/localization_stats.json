@@ -1,0 +1,23 @@
+{
+  "compartments_integrated": {
+    "n_genes": 8774,
+    "spearman_rho": 0.08268272452546972,
+    "spearman_p": 8.693367775168975e-15,
+    "pearson_r": 0.09669475566559144,
+    "pearson_p": 1.1125231823911214e-19,
+    "auroc": 0.5544524967933168,
+    "auprc": 0.7149497008230715,
+    "n_cytoplasmic": 5407,
+    "n_nuclear": 2787,
+    "baseline_prevalence": 0.6598730778618501
+  },
+  "compartments_knowledge": {
+    "n_cyto_only": 3104,
+    "n_nuc_only": 1415,
+    "n_both": 2888,
+    "median_delta_cyto": 0.48811499999999997,
+    "median_delta_nuc": 0.3637,
+    "median_delta_both": 0.5135799999999999,
+    "mannwhitney_p": 5.16301593074002e-19
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "latent_dims": 32,
+  "decode_check_max_abs_diff": 1.3828277587890625e-05,
+  "r2_loglib_from_all_latents_within_ct": 0.9566538855433464,
+  "share_output_within_ct_var_removed_by_projecting_out_libsize": 0.8541974582471309,
+  "output_within_ct_var_sum": 683.2011579602828,
+  "nuclei_dims_total_var_gt_0p01": 6,
+  "nuclei_dims_within_var_gt_0p01": 6,
+  "nuclei_latent_pr_pooled_within": 2.927241605210437,
+  "cells_latent_pr_pooled_within": 2.9292096380924875,
+  "nuclei_latent_pr_total": 2.376412790817453
+}

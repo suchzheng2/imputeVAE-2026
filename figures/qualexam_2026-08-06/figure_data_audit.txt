@@ -1,0 +1,129 @@
+FIGURE DATA AUDIT
+=================
+Generated: 2026-08-06
+Project: imputeVAE qualifying exam figures (Figures 3, 4, 5)
+
+1. DATA PARTITION STATUS
+========================
+
+CRITICAL FINDING: No validation-only predictions exist. All evaluation data
+uses the FULL dataset (all nuclei, all cells). The 60/20/20 train/valid/test
+split is applied only during ImputeVAE model training (in imputeVAE/data.py,
+balanced_split_by_cell_type). Post-training evaluation scripts
+(evaluate_baseline.py, evaluate_baseline_incremental.py,
+compartment_classification.py) reload ALL data via load_raw_data(), which
+applies protocol filtering (n3A/c3A) and gene/cell-type filtering but NO
+train/valid/test split.
+
+ImputeVAE predictions:
+  File: run/cvae_full_eval/imputed_cell_from_nucleus.npy (1.6 GB)
+  Shape: [40166, 10134] — ALL n3A nuclei, 10134 genes
+  Labels: run/cvae_full_eval/nucleus_obs.csv
+  Partition: FULL DATA (all nuclei, not just validation)
+  Note: The model was trained on 60% of data, so ~40% of these predictions
+        are on nuclei unseen during training. However, the predictions file
+        does NOT flag which observations are train/valid/test.
+
+Comparison method predictions (all 1.6 GB, [40166, 10134]):
+  run/scvi_baseline/imputed_cell_from_nucleus.npy — FULL DATA fit + eval
+  run/scanvi_baseline/imputed_cell_from_nucleus.npy — FULL DATA fit + eval
+  run/scgen_baseline/imputed_cell_from_nucleus.npy — FULL DATA fit + eval
+  run/scbutterfly_baseline/imputed_cell_from_nucleus.npy — FULL DATA fit + eval
+  run/linreg_baseline/imputed_cell_from_nucleus.npy — FULL DATA fit + eval
+  run/ctmean_baseline/imputed_cell_from_nucleus.npy — FULL DATA fit + eval
+
+All comparison methods were fitted on the full working dataset and evaluated on
+the same data. ImputeVAE was trained on a 60% subset but its prediction file
+covers all nuclei. No method has a clean held-out evaluation.
+
+2. GENE IDENTITY AND ORDER
+===========================
+Gene list: data/training_gene_list_v3.csv (10,134 genes, Config B)
+All prediction arrays have 10,134 columns.
+Gene ordering: alphabetical by gene name (sorted in load_raw_data via argsort).
+compartment_classification/gt_delta_per_ct.csv: rows indexed by gene name, 17 CT columns.
+compartment_classification/predicted_deltas_global.csv: rows indexed by gene name, 8 method columns.
+VERIFIED: Gene identities match across gt_delta_global.csv (10134 genes) and
+predicted_deltas_global.csv (10134 genes). Same gene names, same order.
+
+3. CELL TYPE NAMING
+====================
+17 shared cell types used consistently across all files:
+  Astro, Endo, L2/3 IT, L5 ET, L5 IT, L5/6 NP, L6 CT, L6 IT, L6b,
+  Lamp5, Macrophage, OPC, Oligo, Pvalb, Sncg, Sst, Vip
+Source: data/common_cell_types.csv
+VERIFIED: Column names in gt_delta_per_ct.csv match this list exactly.
+
+Neuronal (12): L2/3 IT, L5 ET, L5 IT, L5/6 NP, L6 CT, L6 IT, L6b,
+               Lamp5, Pvalb, Sncg, Sst, Vip
+Non-neuronal (5): Astro, Endo, Macrophage, OPC, Oligo
+
+4. VALUE SCALE
+===============
+All evaluation data is in log1p(raw counts) scale.
+load_raw_data() default: normalization="log1p" -> np.log1p(X)
+The imputed prediction arrays are also in log1p scale (ImputeVAE outputs log1p).
+Delta = mean(imputed or cell) - mean(nucleus) in log1p space.
+
+5. AVAILABLE METRICS BY SOURCE
+================================
+
+A. Eval JSONs (per method):
+   - gene_corr: median, mean, std, pct thresholds
+   - r_squared: median, mean (CT-mean level R²)
+   - shift: mean_shift, median_shift
+   - gene_mse: median, mean
+   - variance_ratio: median_ratio, mean_ratio (SUMMARY ONLY, no per-CT)
+   - delta_gt: overall_corr, overall_r2, per_ct_corr (17 CTs), per_ct_r2
+   - wasserstein: median, mean, n_genes=200
+   - compartment: ribosomal/cytoplasmic/nuclear_lncrna sign fractions
+   Available for: cvae_full_v2, ctmean_v2, scvi_v2, scanvi, scgen,
+                  scbutterfly, linreg
+
+B. compartment_classification/ CSVs:
+   - gt_delta_global.csv: gene, cell_mean, nuc_mean, gt_delta (10134 genes)
+   - gt_delta_per_ct.csv: gene x 17 CTs, ground truth delta (10134 genes)
+   - predicted_deltas_global.csv: gene x 8 methods, predicted delta (10134 genes)
+   - method_comparison.csv: AUROC/AUPRC/accuracy etc at tau=0,0.1,0.2
+   - per_ct_method_auroc.csv: per-CT AUROC for each method (17 CTs x 8 methods)
+   - ct_counts.json: cell/nuclei counts per CT
+
+C. Per-CT predicted deltas for COMPARISON METHODS: NOT AVAILABLE
+   Only gt_delta_per_ct.csv exists. There is no per-CT predicted delta for
+   scGen, scButterfly, scVI, etc. Only the global (averaged across all CTs)
+   predicted delta is available.
+
+6. IMPLICATIONS FOR REQUESTED FIGURES
+=======================================
+
+FIGURE 3, Panel B (predicted vs empirical delta per gene x CT):
+  - Empirical delta can be computed from gt_delta_per_ct.csv
+  - ImputeVAE predicted delta: requires computing per-CT means from the
+    prediction array (1.6 GB). Available but needs computation.
+  - All analyses are internal full-data consistency, NOT held-out.
+
+FIGURE 3, Panel A (method comparison metrics):
+  - Available from eval JSONs. All methods use full data.
+  - Wasserstein available for all methods.
+
+FIGURE 4 (cell-type-specific magnitude):
+  - ImputeVAE: can compute D_predicted from prediction arrays.
+  - scGen/scButterfly: can compute D_predicted from their prediction arrays.
+  - All use full data.
+
+FIGURE 5 (variance retention):
+  - Only summary variance_ratio available from eval JSONs.
+  - Per-CT variance ratio needs to be computed from prediction arrays.
+  - All methods have prediction arrays available.
+
+7. CELL AND NUCLEI COUNTS (from compartment_classification/README.md)
+=====================================================================
+Total cells: 71,117 (c3A protocol)
+Total nuclei: 40,166 (n3A protocol)
+Per CT counts listed in compartment_classification/ct_counts.json
+
+8. TEST PARTITION
+==================
+No test data is accessed or evaluated in any of these files.
+The test partition exists conceptually in the training code but is never
+loaded by the evaluation scripts.

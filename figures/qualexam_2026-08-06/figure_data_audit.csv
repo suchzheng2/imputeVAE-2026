@@ -1,0 +1,21 @@
+file_path,description,method,partition,n_observations,n_genes,scale,format,verified
+run/cvae_full_eval/imputed_cell_from_nucleus.npy,ImputeVAE predicted cell expression,ImputeVAE,full_data,40166,10134,log1p,npy,yes
+run/cvae_full_eval/nucleus_obs.csv,Cell type labels for ImputeVAE predictions,ImputeVAE,full_data,40166,NA,NA,csv,yes
+run/scvi_baseline/imputed_cell_from_nucleus.npy,scVI predicted cell expression,scVI,full_data,40166,10134,log1p,npy,yes
+run/scanvi_baseline/imputed_cell_from_nucleus.npy,scANVI predicted cell expression,scANVI,full_data,40166,10134,log1p,npy,yes
+run/scgen_baseline/imputed_cell_from_nucleus.npy,scGen predicted cell expression,scGen,full_data,40166,10134,log1p,npy,yes
+run/scbutterfly_baseline/imputed_cell_from_nucleus.npy,scButterfly predicted cell expression,scButterfly,full_data,40166,10134,log1p,npy,yes
+run/linreg_baseline/imputed_cell_from_nucleus.npy,Linear regression predicted cell expression,Linear_reg,full_data,40166,10134,log1p,npy,yes
+run/ctmean_baseline/imputed_cell_from_nucleus.npy,Cell-type mean predicted cell expression,CT-mean,full_data,40166,10134,log1p,npy,yes
+compartment_classification/gt_delta_global.csv,Ground truth delta (cell - nucleus mean) per gene,reference,full_data,10134,NA,log1p_delta,csv,yes
+compartment_classification/gt_delta_per_ct.csv,Ground truth delta per gene per cell type,reference,full_data,10134,17,log1p_delta,csv,yes
+compartment_classification/predicted_deltas_global.csv,Predicted delta per gene per method (global mean),all_methods,full_data,10134,8,log1p_delta,csv,yes
+compartment_classification/method_comparison.csv,AUROC and classification metrics per method,all_methods,full_data,NA,NA,NA,csv,yes
+compartment_classification/ct_counts.json,Cell and nuclei counts per cell type,reference,full_data,17,NA,NA,json,yes
+run/cvae_full_eval/eval/eval_cvae_full_v2.json,ImputeVAE evaluation metrics,ImputeVAE,full_data,NA,NA,NA,json,yes
+run/scvi_baseline/eval/eval_scvi_v2.json,scVI evaluation metrics,scVI,full_data,NA,NA,NA,json,yes
+run/scanvi_baseline/eval/eval_scanvi.json,scANVI evaluation metrics,scANVI,full_data,NA,NA,NA,json,yes
+run/scgen_baseline/eval/eval_scgen.json,scGen evaluation metrics,scGen,full_data,NA,NA,NA,json,yes
+run/scbutterfly_baseline/eval/eval_scbutterfly.json,scButterfly evaluation metrics,scButterfly,full_data,NA,NA,NA,json,yes
+run/linreg_baseline/eval/eval_linreg.json,Linear regression evaluation metrics,Linear_reg,full_data,NA,NA,NA,json,yes
+run/ctmean_baseline/eval/eval_ctmean_v2.json,Cell-type mean evaluation metrics,CT-mean,full_data,NA,NA,NA,json,yes

@@ -1,0 +1,18 @@
+{
+  "n_cells_ge50_transcripts": 63013,
+  "panel_genes": 5006,
+  "shared_with_training_list": 2508,
+  "shared_detected_in_ge_5pct_cells": 2214,
+  "median_transcripts_per_cell": 1091.0,
+  "median_shared_counts_per_cell": 862.0,
+  "section_extent_um": {
+    "x": [
+      6.2361602783203125,
+      7084.884765625
+    ],
+    "y": [
+      236.1215362548828,
+      5051.67431640625
+    ]
+  }
+}

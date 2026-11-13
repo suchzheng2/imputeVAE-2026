@@ -1,0 +1,11 @@
+figure,method,gene_corr_median,r_squared_median,wasserstein_median,partition,pearson_r,spearman_rho,r_squared,n_points,AUROC,PR_AUC,accuracy,sensitivity,specificity,balanced_accuracy,MCC,n_positive,n_negative,n_zero,pct_positive
+Fig3A,ImputeVAE,0.9271991127017408,0.7984932065010071,,full_data,,,,,,,,,,,,,,,
+Fig3A,CT-mean,0.9999999974957305,0.999999994276155,,full_data,,,,,,,,,,,,,,,
+Fig3A,Linear reg,0.8217543019768572,0.672120600938797,0.2684790103864966,full_data,,,,,,,,,,,,,,,
+Fig3A,scVI,0.3863234924604051,-0.668708086013794,,full_data,,,,,,,,,,,,,,,
+Fig3A,scANVI,0.37289705539831186,-0.7534091472625732,0.9284274740090643,full_data,,,,,,,,,,,,,,,
+Fig3A,scGen,0.5007955840121592,-0.6857022047042847,0.9219121251152105,full_data,,,,,,,,,,,,,,,
+Fig3A,scButterfly,0.7864290531709073,-0.8695690631866455,0.9912141830184757,full_data,,,,,,,,,,,,,,,
+Fig3A,Raw nuclei,0.8217623392712943,,,full_data,,,,,,,,,,,,,,,
+Fig3B_summary,ImputeVAE,,,,full_data,0.9503169133023763,0.9434885769308708,0.8899051485826166,172278.0,,,,,,,,,,,
+Fig3C_summary,ImputeVAE,,,,full_data,,,,,0.9413063583698766,0.9918533477567111,0.9163304570895522,0.9258650692508232,0.8293086142764362,0.8775868417636297,0.633180497450689,154583.0,16937.0,758.0,90.12534981343283

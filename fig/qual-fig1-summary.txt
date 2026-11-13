@@ -1,0 +1,40 @@
+Statistical Summary - Figure 1
+==================================================
+Number of cell types: 17
+Number of genes: 10134
+
+Correlation range: 0.7575 - 0.9372
+Correction magnitude range: 0.0901 - 0.6319
+
+Median correlation (neuronal): 0.7848
+Median correlation (non-neuronal): 0.8772
+Median correction magnitude (neuronal): 0.5610
+Median correction magnitude (non-neuronal): 0.1222
+Neuronal/non-neuronal magnitude ratio: 4.590
+
+Spearman rho (corr vs magnitude): -0.7966 (p=0.0001298)
+
+Per-cell-type data:
+  L6 IT           (Neuronal     ) r=0.7732 [0.7719, 0.7742]  mag=0.6319 [0.6245, 0.6397]  n_cell=4445  n_nuc=2177
+  L2/3 IT         (Neuronal     ) r=0.7815 [0.7808, 0.7820]  mag=0.6058 [0.6011, 0.6107]  n_cell=10915  n_nuc=8043
+  Sst             (Neuronal     ) r=0.7721 [0.7702, 0.7738]  mag=0.5898 [0.5781, 0.5998]  n_cell=1869  n_nuc=1692
+  Lamp5           (Neuronal     ) r=0.8049 [0.8027, 0.8060]  mag=0.5734 [0.5638, 0.5829]  n_cell=2357  n_nuc=950
+  L6 CT           (Neuronal     ) r=0.7915 [0.7909, 0.7920]  mag=0.5680 [0.5640, 0.5723]  n_cell=12807  n_nuc=7955
+  L6b             (Neuronal     ) r=0.7575 [0.7540, 0.7598]  mag=0.5630 [0.5396, 0.5848]  n_cell=554  n_nuc=659
+  Sncg            (Neuronal     ) r=0.7800 [0.7733, 0.7826]  mag=0.5590 [0.5295, 0.5934]  n_cell=348  n_nuc=192
+  Pvalb           (Neuronal     ) r=0.7769 [0.7730, 0.7794]  mag=0.5451 [0.5192, 0.5694]  n_cell=368  n_nuc=2600
+  L5 IT           (Neuronal     ) r=0.7881 [0.7875, 0.7886]  mag=0.5149 [0.5111, 0.5182]  n_cell=29721  n_nuc=11599
+  L5/6 NP         (Neuronal     ) r=0.8138 [0.8123, 0.8147]  mag=0.4957 [0.4878, 0.5038]  n_cell=3147  n_nuc=1503
+  Vip             (Neuronal     ) r=0.8357 [0.8337, 0.8367]  mag=0.4184 [0.4097, 0.4267]  n_cell=2966  n_nuc=1092
+  L5 ET           (Neuronal     ) r=0.8156 [0.7955, 0.8317]  mag=0.3479 [0.3138, 0.3926]  n_cell=161  n_nuc=1244
+  Oligo           (Non-neuronal ) r=0.8254 [0.8130, 0.8263]  mag=0.2495 [0.2356, 0.2651]  n_cell=537  n_nuc=143
+  OPC             (Non-neuronal ) r=0.8865 [0.8385, 0.8895]  mag=0.2460 [0.2182, 0.2781]  n_cell=146  n_nuc=77
+  Macrophage      (Non-neuronal ) r=0.7941 [0.7602, 0.7847]  mag=0.1222 [0.1184, 0.1387]  n_cell=122  n_nuc=54
+  Endo            (Non-neuronal ) r=0.8772 [0.8032, 0.8574]  mag=0.0985 [0.1039, 0.1355]  n_cell=187  n_nuc=23
+  Astro           (Non-neuronal ) r=0.9372 [0.9277, 0.9361]  mag=0.0901 [0.0841, 0.1050]  n_cell=398  n_nuc=163
+
+Interpretation:
+  Neuronal cell types have lower median correlation than non-neuronal,
+  suggesting more divergent nucleus-cell expression patterns in neurons.
+  Neuronal cell types have larger median correction magnitude,
+  consistent with greater cytoplasmic RNA content in neurons.

@@ -1,0 +1,336 @@
+{
+  "dataset": "Lake 2023 human kidney",
+  "n_cells": 126821,
+  "n_nuclei": 122678,
+  "n_shared_genes": 30617,
+  "n_common_cts": 21,
+  "common_cts": [
+    "B cell",
+    "T cell",
+    "conventional dendritic cell",
+    "endothelial cell",
+    "epithelial cell of proximal tubule",
+    "kidney collecting duct intercalated cell",
+    "kidney collecting duct principal cell",
+    "kidney connecting tubule epithelial cell",
+    "kidney distal convoluted tubule epithelial cell",
+    "kidney interstitial alternatively activated macrophage",
+    "kidney loop of Henle thick ascending limb epithelial cell",
+    "kidney loop of Henle thin ascending limb epithelial cell",
+    "kidney loop of Henle thin descending limb epithelial cell",
+    "mast cell",
+    "mature NK T cell",
+    "mononuclear phagocyte",
+    "non-classical monocyte",
+    "parietal epithelial cell",
+    "plasma cell",
+    "plasmacytoid dendritic cell, human",
+    "podocyte"
+  ],
+  "compartment": {
+    "ribosomal": {
+      "n_found": 107,
+      "mean_delta": 0.7657756209373474,
+      "median_delta": 0.8726010322570801,
+      "frac_positive": 0.822429906542056,
+      "top_5": [
+        {
+          "gene": "RPL41",
+          "delta": 1.7388975620269775
+        },
+        {
+          "gene": "RPL39",
+          "delta": 1.5909819602966309
+        },
+        {
+          "gene": "RPS12",
+          "delta": 1.576519250869751
+        },
+        {
+          "gene": "RPL10",
+          "delta": 1.564131736755371
+        },
+        {
+          "gene": "RPS18",
+          "delta": 1.5538041591644287
+        }
+      ]
+    },
+    "nuclear_lncrna": {
+      "n_found": 6,
+      "per_gene": [
+        {
+          "gene": "KCNQ1OT1",
+          "delta": -0.5116839408874512
+        },
+        {
+          "gene": "MALAT1",
+          "delta": -1.5346441268920898
+        },
+        {
+          "gene": "MEG3",
+          "delta": -0.07773416489362717
+        },
+        {
+          "gene": "NEAT1",
+          "delta": -1.3339627981185913
+        },
+        {
+          "gene": "SNHG11",
+          "delta": 0.022328581660985947
+        },
+        {
+          "gene": "XIST",
+          "delta": -0.313205748796463
+        }
+      ],
+      "mean_delta": -0.6248170137405396,
+      "frac_negative": 0.8333333333333334
+    },
+    "key_gene_ranks": [
+      {
+        "gene": "KCNQ1OT1",
+        "delta": -0.5116839408874512,
+        "percentile": 0.770813600287422
+      },
+      {
+        "gene": "MALAT1",
+        "delta": -1.5346441268920898,
+        "percentile": 0.0032661593232517884
+      },
+      {
+        "gene": "MEG3",
+        "delta": -0.07773416489362717,
+        "percentile": 14.041218930659438
+      },
+      {
+        "gene": "NEAT1",
+        "delta": -1.3339627981185913,
+        "percentile": 0.009798477969755364
+      },
+      {
+        "gene": "RPL10",
+        "delta": 1.564131736755371,
+        "percentile": 99.99020152203025
+      },
+      {
+        "gene": "RPL10A",
+        "delta": 0.8561843633651733,
+        "percentile": 99.72564261684686
+      },
+      {
+        "gene": "RPL10L",
+        "delta": 0.0,
+        "percentile": 76.41996276578371
+      },
+      {
+        "gene": "RPL11",
+        "delta": 1.3519930839538574,
+        "percentile": 99.93141065421172
+      },
+      {
+        "gene": "RPL12",
+        "delta": 1.2313237190246582,
+        "percentile": 99.88895058300943
+      },
+      {
+        "gene": "RPL13",
+        "delta": 1.3495762348175049,
+        "percentile": 99.92814449488846
+      },
+      {
+        "gene": "RPL13A",
+        "delta": 0.38429126143455505,
+        "percentile": 99.05934611490349
+      },
+      {
+        "gene": "RPL14",
+        "delta": 0.9789103865623474,
+        "percentile": 99.78443348466539
+      },
+      {
+        "gene": "RPL15",
+        "delta": 1.062828540802002,
+        "percentile": 99.8105627592514
+      },
+      {
+        "gene": "RPL17",
+        "delta": 0.9754562377929688,
+        "percentile": 99.78116732534214
+      },
+      {
+        "gene": "SNHG11",
+        "delta": 0.022328581660985947,
+        "percentile": 91.29241924421073
+      },
+      {
+        "gene": "XIST",
+        "delta": -0.313205748796463,
+        "percentile": 2.7370415128849985
+      }
+    ]
+  },
+  "cross_tissue": {
+    "n_mapped": 8269,
+    "n_kidney_total": 8269,
+    "n_mouse_total": 10134,
+    "spearman_r": 0.02768282047022662,
+    "spearman_p": 0.011822029292985143,
+    "pearson_r": 0.19751410417767307,
+    "pearson_p": 1.627087812803571e-73,
+    "ribo_both_positive": 0.8648648648648649,
+    "ribo_n": 74,
+    "synaptic": {
+      "n_found": 10,
+      "kidney_mean_delta": -0.058206330984830856,
+      "brain_mean_delta": 1.681548,
+      "per_gene": [
+        {
+          "mouse_symbol": "Nlgn1",
+          "kidney_delta": -0.5886509418487549,
+          "mouse_delta": 0.70085
+        },
+        {
+          "mouse_symbol": "Nrxn1",
+          "kidney_delta": -0.009758549742400646,
+          "mouse_delta": 0.81479
+        },
+        {
+          "mouse_symbol": "Snap25",
+          "kidney_delta": -0.012180397287011147,
+          "mouse_delta": 1.87587
+        },
+        {
+          "mouse_symbol": "Stx1a",
+          "kidney_delta": -0.011247014626860619,
+          "mouse_delta": 1.43157
+        },
+        {
+          "mouse_symbol": "Stx1b",
+          "kidney_delta": -0.003605922218412161,
+          "mouse_delta": 2.07218
+        },
+        {
+          "mouse_symbol": "Sv2a",
+          "kidney_delta": -0.0008244242053478956,
+          "mouse_delta": 2.28034
+        },
+        {
+          "mouse_symbol": "Sv2b",
+          "kidney_delta": -0.007216968573629856,
+          "mouse_delta": 1.47979
+        },
+        {
+          "mouse_symbol": "Syn1",
+          "kidney_delta": -0.0008296947344206274,
+          "mouse_delta": 1.97901
+        },
+        {
+          "mouse_symbol": "Syt1",
+          "kidney_delta": -0.06900544464588165,
+          "mouse_delta": 1.08905
+        },
+        {
+          "mouse_symbol": "Vamp2",
+          "kidney_delta": 0.12125596404075623,
+          "mouse_delta": 3.09203
+        }
+      ]
+    },
+    "top100_overlap": 22,
+    "top100_shared_genes": [
+      "Actb",
+      "Actg1",
+      "Cfl1",
+      "Dynll1",
+      "Eef1a1",
+      "Eif1",
+      "Ptma",
+      "Rpl19",
+      "Rpl26",
+      "Rpl27a",
+      "Rpl32",
+      "Rpl41",
+      "Rpl8",
+      "Rplp1",
+      "Rps14",
+      "Rps24",
+      "Rps27a",
+      "Rps29",
+      "Rps3",
+      "Rps8",
+      "Tmsb4x",
+      "Tpt1"
+    ],
+    "bot100_overlap": 1,
+    "bot100_shared_genes": [
+      "Malat1"
+    ]
+  },
+  "go_enrichment": {
+    "top100_increased_top5": [
+      {
+        "source": "GO:CC",
+        "name": "cytosolic ribosome",
+        "p_value": 1.949009399028918e-121,
+        "intersection_size": 62
+      },
+      {
+        "source": "GO:CC",
+        "name": "ribosomal subunit",
+        "p_value": 1.7552404085191414e-102,
+        "intersection_size": 61
+      },
+      {
+        "source": "GO:BP",
+        "name": "cytoplasmic translation",
+        "p_value": 2.535993919292308e-97,
+        "intersection_size": 61
+      },
+      {
+        "source": "KEGG",
+        "name": "Ribosome",
+        "p_value": 7.993670316786462e-82,
+        "intersection_size": 61
+      },
+      {
+        "source": "GO:CC",
+        "name": "ribosome",
+        "p_value": 5.733653245710787e-74,
+        "intersection_size": 62
+      }
+    ],
+    "top100_decreased_top5": [
+      {
+        "source": "GO:BP",
+        "name": "cell junction organization",
+        "p_value": 4.881180003497622e-07,
+        "intersection_size": 20
+      },
+      {
+        "source": "GO:CC",
+        "name": "tight junction",
+        "p_value": 1.4799926167721712e-06,
+        "intersection_size": 9
+      },
+      {
+        "source": "GO:CC",
+        "name": "apical junction complex",
+        "p_value": 1.7093130005550065e-06,
+        "intersection_size": 9
+      },
+      {
+        "source": "GO:CC",
+        "name": "cell junction",
+        "p_value": 1.7093130005550065e-06,
+        "intersection_size": 29
+      },
+      {
+        "source": "GO:CC",
+        "name": "bicellular tight junction",
+        "p_value": 4.953730550594084e-06,
+        "intersection_size": 8
+      }
+    ]
+  }
+}

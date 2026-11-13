@@ -1,0 +1,10 @@
+,MERFISH-C57BL6J-638850,Zhuang-ABCA-1
+panel genes,550,1122
+"overlap with our 10,134",217,426
+ribosomal (Rpl/Rps list),0/73,0/73
+nuclear lncRNA (45),0/45,0/45
+cytoplasmic markers (18),0/18,0/18
+SynGO,0/0,0/0
+MitoCarta (in our list),0/0,0/0
+GT cytoplasm-enriched (delta > +0.3),108/5854,157/5854
+GT nuclear-enriched (delta < -0.2),0/39,0/39

@@ -1,0 +1,60 @@
+Gene,CellType,Description,InConfigB
+Slc17a7,Excitatory (pan),glutamate transporter,YES
+Slc17a6,Excitatory (pan),glutamate transporter 2,NO
+Gad1,Inhibitory (pan),GABA synthesis,YES
+Gad2,Inhibitory (pan),GABA synthesis,YES
+Slc32a1,Inhibitory (pan),GABA transporter,YES
+Snap25,Pan-neuronal,synaptic,YES
+Syt1,Pan-neuronal,synaptic,YES
+Rbfox3,Pan-neuronal,NeuN,YES
+Cux2,L2/3 IT,layer marker,YES
+Cux1,L2/3 IT,layer marker,YES
+Rorb,L5 IT / L4,layer marker,YES
+Fezf2,L5 ET,subcortical projecting,YES
+Bcl11b,L5 ET,Ctip2,YES
+Crym,L5 ET / L5/6 NP,crystallin mu,YES
+Tshz2,L5/6 NP,near-projecting,YES
+Syt6,L6 CT,corticothalamic,YES
+Tle4,L6 CT / L6b,layer 6,YES
+Foxp2,L6 CT / L6b,transcription factor,YES
+Ctgf,L6b,subplate,NO
+Pvalb,Pvalb,subclass-defining,NO
+Sst,Sst,subclass-defining,YES
+Vip,Vip,subclass-defining,YES
+Lamp5,Lamp5,subclass-defining,YES
+Sncg,Sncg,subclass-defining,NO
+Cck,Sncg,cholecystokinin,YES
+Npy,Sst (Chodl),neuropeptide Y,YES
+Nos1,Sst (Chodl)/Lamp5-Lhx6,nitric oxide synthase,NO
+Calb2,Vip,calretinin,NO
+Ndnf,Lamp5,neurogliaform,NO
+Aqp4,Astrocyte,aquaporin,NO
+Gfap,Astrocyte,glial fibrillary,NO
+Aldh1l1,Astrocyte,aldehyde dehydrogenase,NO
+Slc1a3,Astrocyte,GLAST,NO
+Sox9,Astrocyte,transcription factor,NO
+Aldoc,Astrocyte,aldolase C,YES
+Apoe,Astrocyte,apolipoprotein E,YES
+Mog,Oligodendrocyte,myelin,NO
+Mbp,Oligodendrocyte,myelin basic protein,YES
+Plp1,Oligodendrocyte,proteolipid,YES
+Mobp,Oligodendrocyte,myelin-associated,NO
+Mag,Oligodendrocyte,myelin-associated glycoprotein,NO
+Cnp,Oligodendrocyte,cyclic nucleotide phosphodiesterase,YES
+Pdgfra,OPC,receptor alpha,NO
+Cspg4,OPC,NG2,NO
+Vcan,OPC,versican,NO
+Olig1,OPC,transcription factor,NO
+Olig2,OPC,transcription factor,NO
+Flt1,Endothelial,VEGF receptor,NO
+Cldn5,Endothelial,claudin,NO
+Pecam1,Endothelial,CD31,NO
+Cx3cr1,Microglia,fractalkine receptor,YES
+C1qa,Microglia,complement,NO
+C1qb,Microglia,complement,NO
+C1qc,Microglia,complement,NO
+Ctss,Microglia,cathepsin,NO
+P2ry12,Microglia,purinergic receptor,YES
+Tmem119,Microglia,transmembrane,NO
+Csf1r,Microglia,colony stimulating factor receptor,NO
+Hexb,Microglia,hexosaminidase,YES

@@ -1,0 +1,72 @@
+{
+  "model_run": "run/run_2026-07-18-19-40-51_570984",
+  "dataset": "Lake 2023 human kidney",
+  "n_nuclei": 122678,
+  "n_cells": 126821,
+  "n_training_genes": 10134,
+  "n_mapped_genes": 8269,
+  "n_unmapped_genes": 1865,
+  "evaluation": {
+    "global_gene_corr_pearson": 0.26220115835720004,
+    "global_gene_corr_spearman": 0.30576117337717473,
+    "per_ct_gene_corr": {
+      "B cell": 0.19917367878045303,
+      "T cell": 0.20189375161119824,
+      "conventional dendritic cell": 0.20688630523810458,
+      "endothelial cell": 0.2913200086197033,
+      "epithelial cell of proximal tubule": 0.2336518106917404,
+      "kidney collecting duct intercalated cell": 0.24692676799618404,
+      "kidney collecting duct principal cell": 0.23731614742578314,
+      "kidney connecting tubule epithelial cell": 0.283779839834078,
+      "kidney distal convoluted tubule epithelial cell": 0.24548719789196113,
+      "kidney interstitial alternatively activated macrophage": 0.2334027564585838,
+      "kidney loop of Henle thick ascending limb epithelial cell": 0.27637784721086717,
+      "kidney loop of Henle thin ascending limb epithelial cell": 0.22004564277710723,
+      "kidney loop of Henle thin descending limb epithelial cell": 0.22437508983692495,
+      "mast cell": 0.2192619094596684,
+      "mature NK T cell": 0.20498336688644617,
+      "mononuclear phagocyte": 0.23532285614255039,
+      "non-classical monocyte": 0.22039017482100592,
+      "parietal epithelial cell": 0.30274105008587543,
+      "plasma cell": 0.1749857602164807,
+      "plasmacytoid dendritic cell, human": 0.21117643753662832,
+      "podocyte": 0.248000543839275
+    },
+    "mean_ct_gene_corr": 0.23416661635050567,
+    "ribosomal": {
+      "n": 74,
+      "corr": 0.49849987481219665,
+      "mean_bias": 0.14661219716072083,
+      "imputed_mean": 1.3085507154464722,
+      "actual_cell_mean": 1.1619387865066528
+    },
+    "nuclear_lncrna": {
+      "genes": [
+        "Malat1",
+        "Meg3",
+        "Xist"
+      ],
+      "imputed_mean": [
+        5.6409912109375,
+        4.6048173904418945,
+        1.7989907264709473
+      ],
+      "actual_cell_mean": [
+        3.3738536834716797,
+        0.031011806800961494,
+        0.33756282925605774
+      ]
+    },
+    "r2_gene_means": -22.46683120727539,
+    "n_mapped_genes": 8269,
+    "n_common_cts": 21
+  },
+  "delta_analysis": {
+    "delta_pearson": 0.14937097458114157,
+    "delta_spearman": 0.1301479989050587,
+    "sign_agreement": 0.34425749817117773,
+    "n_genes_tested": 6835,
+    "mean_gt_delta": -0.06771666556596756,
+    "mean_imp_delta": 0.48862895369529724
+  }
+}

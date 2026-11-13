@@ -1,0 +1,9 @@
+,10x-Chromium-v2|Cortex1,10x-Chromium-v2|Cortex2,DroNc-seq|Cortex1,DroNc-seq|Cortex2,Smart-seq2|Cortex1,Smart-seq2|Cortex2,sci-RNA-seq|Cortex1,sci-RNA-seq|Cortex2
+10x-Chromium-v2|Cortex1,1.0,0.967,0.761,0.795,0.802,0.778,0.83,0.88
+10x-Chromium-v2|Cortex2,0.967,1.0,0.814,0.831,0.832,0.809,0.831,0.902
+DroNc-seq|Cortex1,0.761,0.814,1.0,0.969,0.725,0.703,0.823,0.843
+DroNc-seq|Cortex2,0.795,0.831,0.969,1.0,0.735,0.713,0.852,0.865
+Smart-seq2|Cortex1,0.802,0.832,0.725,0.735,1.0,0.989,0.788,0.86
+Smart-seq2|Cortex2,0.778,0.809,0.703,0.713,0.989,1.0,0.772,0.842
+sci-RNA-seq|Cortex1,0.83,0.831,0.823,0.852,0.788,0.772,1.0,0.957
+sci-RNA-seq|Cortex2,0.88,0.902,0.843,0.865,0.86,0.842,0.957,1.0

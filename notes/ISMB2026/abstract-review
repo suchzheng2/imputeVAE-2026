@@ -1,0 +1,92 @@
+----------------------- REVIEW 1 ---------------------
+
+SUBMISSION: 1546
+TITLE: ImputeVAE: Translating Single-Nucleus to Single-Cell Expression Profiles via Cross-Reconstructive Variational Autoencoders
+
+----------- Overall evaluation -----------
+The authors describe a VAE-based approach to impute scRNA-seq data from snRNA-seq data using cell-type classification, DE recovery, and gene correlation metrics as evaluation metrics.
+
+There are a couple of major issues which make the method's evaluation flawed:
+1) The first design choice described is a latent alignment between cell and nuclei latents by adding a penalty term that pushes together each the distributions of each cell type. The cell type latents are essentially forced together. Subsequently, the model is evaluated by seeing if the nuclei->cell imputations recover the cell type labels. Unless the held-out dataset is setup in such a way that realistically mimics how the method would be used in practiced, this model is setup to succeed on this metric. 
+2) The linear regression baseline is described as "a per-gene linear regression (fit on cell-type means, applied to held-out nuclei)". Per-cell-type implies only 17 datapoints for the data described, which is clearly not sufficient to gather a strong enough signal to detect DE genes properly. It is not clear whether the linear regression is one dimensional (same gene to same gene prediction) or transcriptome-wide (full transcriptome -> predict one gene each), but it should be the transcriptome-wide approach to be a fair comparison. Despite this, the gain on cell-type classification  over the linear regression baseline is trivial (1.1% over an unknown number of held-out cells) and not mentioned in the results. Given this is the only real benchmark (raw nuclei is simply a negative control given the problem statement), the ImputeVAE metrics are difficult to judge.
+
+Nit: the figure resolution is too low to clearly read legends.
+Nit: the bar plots are presented in a misleading way to exaggerate differences (min is 70 and 30 respectively instead of 0).
+
+
+----------------------- REVIEW 2 ---------------------
+
+SUBMISSION: 1546
+TITLE: ImputeVAE: Translating Single-Nucleus to Single-Cell Expression Profiles via Cross-Reconstructive Variational Autoencoders
+
+----------- Overall evaluation -----------
+This work introduces ImputeVAE, a method leveraging a variational autoencoder to translate from single-nucleus to single-cell expression profiles. The problem formulation is well-motivated, particularly in treating nucleus-to-cell differences as a structured, directional transformation rather than a simple batch effect. The overall framework is technically sound, with the main contribution arising from the integration of latent alignment and cross-reconstruction objectives within a VAE setting. While effective, the methodological novelty appears to be incremental rather than constituting a fundamentally new modeling paradigm.
+
+
+----------------------- REVIEW 3 ---------------------
+
+SUBMISSION: 1546
+TITLE: ImputeVAE: Translating Single-Nucleus to Single-Cell Expression Profiles via Cross-Reconstructive Variational Autoencoders
+
+----------- Overall evaluation -----------
+Standard computational workflows typically treat transcriptional differences between nuclei and whole cells as stochastic technical noise or batch effects. This study assumes that nucleus-to-cell differences follows structured, gene-specific patterns that can be computationally modeled. The study introduced imputeVAE, a Variational Autoencoder-based framework designed to harmonize snRNA-seq profiles with scRNA-seq distributions. Using the Allen Brain Cell Atlas from mouse cortical tissues, the study demonstrated that imputeVAE improves cell-type classification accuracy and the overlap of differentially expressed genes with cross-decoded snRNA-seq.
+
+
+----------------------- REVIEW 4 ---------------------
+
+SUBMISSION: 1546
+TITLE: ImputeVAE: Translating Single-Nucleus to Single-Cell Expression Profiles via Cross-Reconstructive Variational Autoencoders
+
+----------- Overall evaluation -----------
+This work proposes ImputeVAE, a variational autoencoder framework for translating single-nucleus RNA-seq profiles into single-cell-like expression profiles. The idea of explicitly modeling the transformation between modalities, rather than treating their differences as technical noise, is interesting and well motivated. However, several aspects of the method and evaluation would benefit from further clarification.
+
+1. The choice of Jensen–Shannon divergence (JSD) for latent alignment is not fully justified. It would be helpful to understand why JSD is preferred over more commonly used divergences such as KL divergence, and how this choice impacts training stability and alignment quality.
+
+2. While the method emphasizes learning a structured transformation rather than correcting technical variation, the comparison to existing approaches is limited. In particular, it would be useful to include stronger baselines that explicitly treat modality differences as batch effects, to better demonstrate the advantages of the proposed approach over correction-based methods.
+
+3. The training setup assumes access to both single-cell and single-nucleus data from the same cell types. However, in many real-world scenarios, one modality may be limited or entirely missing. It is unclear how the model would perform under such conditions, and how well the learned mapping can generalize beyond the training dataset.
+
+4. The generalization ability of the model remains an open question. The current evaluation is conducted on a single dataset, and it would be helpful to assess whether the learned transformation transfers across tissues, species, or experimental settings.
+
+5. While the method aims to align single-cell and single-nucleus data, the manuscript does not clearly address how underlying technical and batch variation between the two modalities is handled. Such differences could significantly affect the learned mapping and should be discussed or evaluated more explicitly.
+
+
+----------------------- REVIEW 5 ---------------------
+
+SUBMISSION: 1546
+TITLE: ImputeVAE: Translating Single-Nucleus to Single-Cell Expression Profiles via Cross-Reconstructive Variational Autoencoders
+
+----------- Overall evaluation -----------
+Review: ImputeVAE: Translating Single-Nucleus to Single-Cell Expression Profiles via Cross-Reconstructive Variational Autoencoders
+
+Summary:
+This paper proposes a variational autoencoder framework designed to model the transformation from nucleus to cell expression.
+
+Major Concerns
+Cell type matching: reconstruction defined on cell-types rather then per cell risks that the model is not going to learn meaningful individual translations. It could learn just averaged profiles.
+ 
+Results are limited and baselines are not shown. 
+
+Major Strengths
+The conditioned decoder was a good design choice, enabling a better training scheme.
+Threatening the nuclei difference as signal rather than noise is also interesting.
+
+Conclusion:
+ImputeVAE addresses a meaningful problem with a principled architecture, but the cell-type-level evaluation strategy, limited baselines, and single-dataset scope leave the core claims insufficiently supported.
+
+
+----------------------- REVIEW 6 ---------------------
+
+SUBMISSION: 1546
+TITLE: ImputeVAE: Translating Single-Nucleus to Single-Cell Expression Profiles via Cross-Reconstructive Variational Autoencoders
+
+----------- Overall evaluation -----------
+This abstract presents an application of a variational autoencoder (VAE) framework to perform cell-level imputation, bridging single-nucleotide sequencing data to single-cell sequencing profiles. The idea is timely and potentially impactful, particularly given the growing need to integrate sparse or lower-resolution genomic data into single-cell contexts. However, while the ambition of the work is commendable, the current presentation makes it difficult to fully assess the methodological novelty and practical benefit. 
+
+Concerns:  
+
+First, the evaluation strategy is limited. The primary comparisons appear to be between the proposed method and unimputed data, which is not sufficient to demonstrate state-of-the-art performance. A meaningful benchmark should include comparisons against existing imputation approaches and closely related VAE-based methods (e.g., scVI or similar frameworks). Without such comparisons, it is unclear whether the proposed approach provides any advantage over established methods. 
+
+Second, the architectural choices of the VAE are not well justified. Key design decisions, such as learned modality embedding are not clearly described or justified by comparison of results.  Ideally, ablation studies would be necessary to support these choices. The abstract makes strong claims about the effectiveness of the method, but provides insufficient quantitative or qualitative evidence to substantiate them. This makes it difficult to judge both the validity of the approach and the extent of its improvement over baseline strategies. 
+
+While the proposed direction is interesting and potentially valuable, the lack of rigorous comparison, limited methodological transparency, and insufficient evidence make it difficult to fully evaluate the contribution. I would recommend weak acceptance (poster).

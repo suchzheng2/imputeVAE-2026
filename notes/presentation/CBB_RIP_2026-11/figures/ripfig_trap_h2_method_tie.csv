@@ -1,0 +1,4 @@
+cell_class,CT-mean,ImputeVAE,Linear_reg,cVAE_20pct,scANVI,scButterfly,scGen,scVI
+excitatory,0.697,0.706,0.675,0.697,0.686,0.686,0.688,0.679
+glia,0.471,0.493,0.553,0.424,0.493,0.431,0.468,0.48
+inhibitory,0.693,0.689,0.68,0.686,0.681,0.686,0.683,0.679

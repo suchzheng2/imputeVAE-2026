@@ -1,0 +1,18 @@
+MISSING FIGURE DATA REPORT
+=========================
+
+1. VALIDATION-ONLY PREDICTIONS (affects all figures)
+   Status: NOT AVAILABLE
+   Impact: All figures use full-data predictions. All panels reflect internal
+   full-data consistency, not held-out evaluation.
+   Required: ImputeVAE predictions restricted to validation nuclei only,
+   plus corresponding validation cell/nucleus partitions.
+
+2. FIGURE 3, Panel D: GO enrichment
+   Status: OMITTED
+   Reason: Cannot verify enrichment statistics match current 10,134-gene
+   background without re-running analysis. Deferred to supplementary figure.
+
+3. RAW NUCLEI Wasserstein and R-squared
+   Status: NA in Figure 3A
+   Reason: Not computed in evaluation pipeline for the identity baseline.

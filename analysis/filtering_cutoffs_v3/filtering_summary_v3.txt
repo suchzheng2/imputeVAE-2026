@@ -1,0 +1,95 @@
+================================================================================
+FILTERING CUTOFF SUMMARY — V3 ONLY
+================================================================================
+
+--- Cell (v3) ---
+Original: 71183 cells, 26852 genes
+
+Gene filtering (detection rate):
+  >0%: 26852 genes (100.0%)
+  >0.5%: 19140 genes (71.3%)
+  >1%: 17450 genes (65.0%)
+  >2%: 15726 genes (58.6%)
+  >5%: 13658 genes (50.9%)
+  >10%: 12113 genes (45.1%)
+
+Gene filtering (mean expression):
+  >0: 26852 genes (100.0%)
+  >0.001: 22751 genes (84.7%)
+  >0.01: 17975 genes (66.9%)
+  >0.1: 12950 genes (48.2%)
+  >1.0: 7144 genes (26.6%)
+
+Cell filtering (library size):
+  Percentiles: 1%=7268, 5%=15333, 10%=20077, 25%=30536, median=46148
+  >0: 71183 cells (100.0%)
+  >1000: 71183 cells (100.0%)
+  >2000: 71157 cells (100.0%)
+  >5000: 70839 cells (99.5%)
+  >10000: 69788 cells (98.0%)
+  >20000: 64138 cells (90.1%)
+
+Cell filtering (genes expressed):
+  Percentiles: 1%=2865, 5%=4639, 10%=5330, 25%=6282, median=7282
+  >500: 71183 cells (100.0%)
+  >1000: 71183 cells (100.0%)
+  >1500: 71075 cells (99.8%)
+  >2000: 70949 cells (99.7%)
+  >3000: 70376 cells (98.9%)
+  >5000: 66181 cells (93.0%)
+
+--- Nuclei (v3) ---
+Original: 40446 cells, 25871 genes
+
+Gene filtering (detection rate):
+  >0%: 25871 genes (100.0%)
+  >0.5%: 17114 genes (66.2%)
+  >1%: 15386 genes (59.5%)
+  >2%: 13567 genes (52.4%)
+  >5%: 11048 genes (42.7%)
+  >10%: 8794 genes (34.0%)
+
+Gene filtering (mean expression):
+  >0: 25871 genes (100.0%)
+  >0.001: 21523 genes (83.2%)
+  >0.01: 16306 genes (63.0%)
+  >0.1: 10489 genes (40.5%)
+  >1.0: 2753 genes (10.6%)
+
+Cell filtering (library size):
+  Percentiles: 1%=4671, 5%=8218, 10%=9920, 25%=12675, median=16099
+  >0: 40446 cells (100.0%)
+  >1000: 40445 cells (100.0%)
+  >2000: 40431 cells (100.0%)
+  >5000: 39972 cells (98.8%)
+  >10000: 36250 cells (89.6%)
+  >20000: 10867 cells (26.9%)
+
+Cell filtering (genes expressed):
+  Percentiles: 1%=1565, 5%=2320, 10%=2610, 25%=3017, median=3446
+  >500: 40446 cells (100.0%)
+  >1000: 40422 cells (99.9%)
+  >1500: 40093 cells (99.1%)
+  >2000: 39486 cells (97.6%)
+  >3000: 30675 cells (75.8%)
+  >5000: 775 cells (1.9%)
+
+================================================================================
+RECOMMENDED CUTOFF COMBINATIONS (v3 only)
+================================================================================
+
+  Cutoff: det>1%, mean>0.01, lib>1000, genes>1000
+    Cell (v3): 17450 genes, 71183 cells
+    Nuclei (v3): 15386 genes, 40422 cells
+
+  Cutoff: det>5%, mean>0.01, lib>2000, genes>1500
+    Cell (v3): 13658 genes, 71075 cells
+    Nuclei (v3): 11048 genes, 40093 cells
+
+  Cutoff: det>5%, mean>0.1, lib>5000, genes>2000
+    Cell (v3): 12895 genes, 70831 cells
+    Nuclei (v3): 10470 genes, 39484 cells
+
+  Cutoff: det>10%, mean>0.1, lib>5000, genes>2000
+    Cell (v3): 12113 genes, 70831 cells
+    Nuclei (v3): 8794 genes, 39484 cells

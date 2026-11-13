@@ -1,0 +1,44 @@
+# training outputs, caches, logs (TB-scale; see CLAUDE.md for layout)
+run/
+cache/
+jobs/logs/
+*.log
+__pycache__/
+*.pyc
+.pybiomart.sqlite
+# large data: only the small gene / type lists and the split manifest are tracked
+data/external/
+data/psychEncode-EDG/
+data/sample_ids/
+data/scvi/
+data/ABC_results/
+# validation: code and reports only, no outputs
+validation/**
+!validation/**/
+!validation/**/*.py
+!validation/**/*.sh
+!validation/**/*.md
+# result dumps of earlier analyses (add deliberately later if needed)
+task_result/
+audit_results/
+compartment_classification/
+# binary / array formats anywhere
+*.h5ad
+*.h5
+*.npy
+*.npz
+*.pt
+*.pkl
+*.zip
+# notes tables above 10 MB (generated 2026-11-13)
+/notes/qualify-exam/pre-qual/Qualifying_slide_template.pptx
+/notes/experiments/SUC-6_variance_retention/library_size/proportion_std_comparison.csv
+/notes/experiments/SUC-6_variance_retention/library_size/variance_decomposition.csv
+/notes/experiments/variance_zero_nonzero_fullmodel/tables/per_ct_gene_variance.csv.gz
+/notes/experiments/zero_nonzero_analysis/pct5v2_cond/within_ct_nonzero_gene_stats.csv
+/notes/qualify-exam/pre-qual/examples/Qualifying_slide.pptx
+/notes/qualify-exam/pre-qual/examples/Pre_qual_slide.pptx
+/notes/experiments/libsize_covariate/armB/tables/per_ct_gene_variance.csv.gz
+/notes/experiments/libsize_covariate/latent8/tables/per_ct_gene_variance.csv.gz
+/notes/experiments/libsize_covariate/latent4/tables/per_ct_gene_variance.csv.gz
+/notes/experiments/libsize_covariate/armA/tables/per_ct_gene_variance.csv.gz

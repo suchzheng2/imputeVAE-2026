@@ -1,0 +1,56 @@
+{
+  "n_permutations": 1000,
+  "n_genes": 10134,
+  "real_metrics": {
+    "ribo_frac_positive": 0.9873417721518988,
+    "ribo_mean_delta": 1.544228481012658,
+    "ribo_n": 79.0,
+    "cyto_frac_positive": 1.0,
+    "cyto_mean_delta": 1.6673600000000002,
+    "cyto_n": 15.0,
+    "lncrna_frac_negative": 1.0,
+    "lncrna_mean_delta": -0.3562599999999999,
+    "lncrna_n": 45.0,
+    "ribo_in_top100": 14.0,
+    "cyto_in_top100": 5.0
+  },
+  "empirical_p_values": {
+    "ribo_frac_positive": 0.07,
+    "ribo_mean_delta": 0.0,
+    "ribo_n": 1.0,
+    "cyto_frac_positive": 0.426,
+    "cyto_mean_delta": 0.0,
+    "cyto_n": 1.0,
+    "lncrna_frac_negative": 0.0,
+    "lncrna_mean_delta": 1.0,
+    "lncrna_n": 1.0,
+    "ribo_in_top100": 0.0,
+    "cyto_in_top100": 0.0
+  },
+  "null_means": {
+    "ribo_frac_positive": 0.9434430379746834,
+    "ribo_mean_delta": 0.5200709135443038,
+    "ribo_n": 79.0,
+    "cyto_frac_positive": 0.9450666666666667,
+    "cyto_mean_delta": 0.5230336366666668,
+    "cyto_n": 15.0,
+    "lncrna_frac_negative": 0.05584444444444444,
+    "lncrna_mean_delta": 0.5288203046666666,
+    "lncrna_n": 45.0,
+    "ribo_in_top100": 0.8,
+    "cyto_in_top100": 0.139
+  },
+  "null_stds": {
+    "ribo_frac_positive": 0.026711488262383957,
+    "ribo_mean_delta": 0.05769937827646354,
+    "ribo_n": 0.0,
+    "cyto_frac_positive": 0.058917041488670975,
+    "cyto_mean_delta": 0.12232099099953182,
+    "cyto_n": 0.0,
+    "lncrna_frac_negative": 0.03475367286745068,
+    "lncrna_mean_delta": 0.07632880570361308,
+    "lncrna_n": 0.0,
+    "ribo_in_top100": 0.8809086218218097,
+    "cyto_in_top100": 0.3601097055065303
+  }
+}

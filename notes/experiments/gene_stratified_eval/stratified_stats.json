@@ -1,0 +1,72 @@
+{
+  "n_bins": 4,
+  "bin_edges": [
+    4.971027374267578e-05,
+    0.16628965362906456,
+    0.40252785384655,
+    0.7392225116491318,
+    4.28187994821167
+  ],
+  "bins": [
+    {
+      "bin": "Q1 [0.000, 0.166)",
+      "n_genes": 2534,
+      "mean_gap": 0.0759715586900711,
+      "median_gap": 0.07294158637523651,
+      "mse_imputed": 0.006446565967053175,
+      "mse_raw_nuc": 0.02206445299088955,
+      "mse_improvement": 0.015617885626852512,
+      "mse_improvement_pct": 70.78301751959741,
+      "corr_imputed_median": 0.9044492502778887,
+      "corr_raw_nuc_median": 0.8085082327035399,
+      "corr_improvement_median": 0.08149611587488198,
+      "delta_error_mean": 0.02451317571103573,
+      "delta_error_median": 0.016864104196429253
+    },
+    {
+      "bin": "Q2 [0.166, 0.403)",
+      "n_genes": 2533,
+      "mean_gap": 0.2787303626537323,
+      "median_gap": 0.2750859260559082,
+      "mse_imputed": 0.015211202204227448,
+      "mse_raw_nuc": 0.0941220298409462,
+      "mse_improvement": 0.07891082763671875,
+      "mse_improvement_pct": 83.83885023434921,
+      "corr_imputed_median": 0.9113889253150333,
+      "corr_raw_nuc_median": 0.8192282671561544,
+      "corr_improvement_median": 0.0883034877713017,
+      "delta_error_mean": 0.032735005021095276,
+      "delta_error_median": 0.023877620697021484
+    },
+    {
+      "bin": "Q3 [0.403, 0.739)",
+      "n_genes": 2533,
+      "mean_gap": 0.55810546875,
+      "median_gap": 0.5506165623664856,
+      "mse_imputed": 0.029534196481108665,
+      "mse_raw_nuc": 0.28190919756889343,
+      "mse_improvement": 0.2523750066757202,
+      "mse_improvement_pct": 89.52350928995467,
+      "corr_imputed_median": 0.9298651631611347,
+      "corr_raw_nuc_median": 0.8383464140033537,
+      "corr_improvement_median": 0.08783556714900931,
+      "delta_error_mean": 0.04904983565211296,
+      "delta_error_median": 0.039988696575164795
+    },
+    {
+      "bin": "Q4 [0.739, 4.282)",
+      "n_genes": 2534,
+      "mean_gap": 1.2091007232666016,
+      "median_gap": 1.0503923892974854,
+      "mse_imputed": 0.054382022470235825,
+      "mse_raw_nuc": 1.234885573387146,
+      "mse_improvement": 1.180503487586975,
+      "mse_improvement_pct": 95.59618421551697,
+      "corr_imputed_median": 0.9452236004071904,
+      "corr_raw_nuc_median": 0.8168478513432955,
+      "corr_improvement_median": 0.12541029016038258,
+      "delta_error_mean": 0.06968703866004944,
+      "delta_error_median": 0.06335306167602539
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+strategy,n_genes,n_markers_retained,n_markers_total,n_markers_missing,missing_markers,cell_var_fraction,nuc_var_fraction,new_vs_configb,dropped_vs_configb
+ConfigB_replica,10134,30,59,29,Aldh1l1; Aqp4; C1qa; C1qb; C1qc; Calb2; Cldn5; Csf1r; Cspg4; Ctgf; Ctss; Flt1; Gfap; Mag; Mobp; Mog; Ndnf; Nos1; Olig1; Olig2; Pdgfra; Pecam1; Pvalb; Slc17a6; Slc1a3; Sncg; Sox9; Tmem119; Vcan,0.8501227220074212,0.9059628035167635,0,0
+Global_1pct,14269,43,59,16,Aldh1l1; Aqp4; C1qa; C1qb; C1qc; Calb2; Cldn5; Csf1r; Cspg4; Ctss; Gfap; Olig1; Olig2; Pdgfra; Sncg; Tmem119,0.9217542922327949,0.9375881561671873,4135,0
+Global_2pct,12514,39,59,20,Aldh1l1; Aqp4; C1qa; C1qb; C1qc; Calb2; Cldn5; Csf1r; Cspg4; Ctss; Flt1; Gfap; Mag; Mog; Ndnf; Olig1; Olig2; Pdgfra; Sncg; Tmem119,0.9040926141568245,0.9301039339449682,2380,0
+PerCT_10pct,14618,58,59,1,Aldh1l1,0.9245793605552655,0.9328728125388359,4498,14
+PerCT_15pct,13567,58,59,1,Aldh1l1,0.9176795097599741,0.9257368570355132,3574,141
+PerCT_1pct,20654,58,59,1,Aldh1l1,0.9345618152600981,0.9436892060454397,10520,0
+PerCT_20pct,12763,58,59,1,Aldh1l1,0.9100820281158405,0.9184145554750561,2945,316
+PerCT_2pct,18826,58,59,1,Aldh1l1,0.9336403281776926,0.9426592774574131,8692,0
+PerCT_3pct,17936,58,59,1,Aldh1l1,0.9327299107159088,0.9416602315187583,7802,0
+PerCT_5pct,16439,58,59,1,Aldh1l1,0.930559664583495,0.939157115605264,6305,0

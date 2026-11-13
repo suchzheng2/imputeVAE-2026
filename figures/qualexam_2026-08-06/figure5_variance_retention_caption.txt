@@ -1,0 +1,11 @@
+Figure 5: ImputeVAE partially preserves within-cell-type variation.
+
+The variance retention ratio is defined as the mean per-gene variance of predicted profiles within a cell type divided by the corresponding mean per-gene variance of observed whole-cell profiles. A ratio of 1.0 indicates preservation of total within-type variation. A ratio near 0 indicates variance collapse. All computations use 10,134 genes in log1p(raw count) space.
+
+(A) Box plots of variance retention ratios across cell types for seven methods. Individual cell-type points overlaid (blue = neuronal, green = non-neuronal). Red dashed line = real cell target (1.0). CT-mean produces ratio 0 by definition. Median values annotated below each box. Linear regression ratios above 1 reflect per-cell deviation amplification without a latent bottleneck. Values above 1.0 may indicate amplified heterogeneity rather than necessarily noise. The y-axis is capped at 1.6; Linear regression values above this range are clipped for display.
+
+(B) ImputeVAE variance retention ratio per cell type, sorted. Gray dotted line = median; red dashed line = real cell target.
+
+(C) Per-gene variance structure preservation: Spearman correlation between per-gene variances in ImputeVAE predictions and observed whole cells within each cell type. Tests whether the model preserves which genes are variable, beyond total variance. Median correlation across cell types is reported.
+
+Data partition: All analyses use the full working dataset. ImputeVAE was trained on 60% of nuclei; predictions cover all nuclei. Comparison methods used the full dataset. Variance retention does not distinguish biological from prediction noise; values above 1.0 should not be interpreted as noise without further analysis. Sample counts per cell type are in the data CSV.

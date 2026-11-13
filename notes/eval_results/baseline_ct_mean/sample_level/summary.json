@@ -1,0 +1,78 @@
+{
+  "variance_ratio": {
+    "median_ratio": 1.978913005684646e-10,
+    "mean_ratio": 4.3269748355085306e-10
+  },
+  "variance_ratio_per_ct": {
+    "Astro": 1.4568469043976795e-12,
+    "Endo": 3.1103513997233004e-14,
+    "L2/3 IT": 1.152094752931987e-09,
+    "L5 ET": 2.660633935391843e-10,
+    "L5 IT": 9.381193599722337e-10,
+    "L5/6 NP": 4.950528320613046e-10,
+    "L6 CT": 1.106347458090795e-09,
+    "L6 IT": 1.2995943210469818e-09,
+    "L6b": 1.0992464577475047e-10,
+    "Lamp5": 1.978913005684646e-10,
+    "Macrophage": 2.0223548584472756e-13,
+    "OPC": 5.334722464125918e-13,
+    "Oligo": 1.6002103071441343e-12,
+    "Pvalb": 9.679377299676162e-10,
+    "Sncg": 7.740573806924722e-12,
+    "Sst": 6.339795355359001e-10,
+    "Vip": 1.7728744861056356e-10
+  },
+  "within_ct_spearman": {
+    "overall_median": NaN,
+    "overall_mean": NaN
+  },
+  "within_ct_spearman_per_ct": {
+    "Astro": NaN,
+    "Endo": NaN,
+    "L2/3 IT": NaN,
+    "L5 ET": NaN,
+    "L5 IT": NaN,
+    "L5/6 NP": NaN,
+    "L6 CT": NaN,
+    "L6 IT": NaN,
+    "L6b": NaN,
+    "Lamp5": NaN,
+    "Macrophage": NaN,
+    "OPC": NaN,
+    "Oligo": NaN,
+    "Pvalb": NaN,
+    "Sncg": NaN,
+    "Sst": NaN,
+    "Vip": NaN
+  },
+  "per_cell_corr": {
+    "overall_median": 1.0,
+    "overall_mean": 1.0
+  },
+  "per_cell_corr_per_ct": {
+    "Astro": 1.0,
+    "Endo": 1.0,
+    "L2/3 IT": 1.0,
+    "L5 ET": 1.0,
+    "L5 IT": 0.9999999999999999,
+    "L5/6 NP": 1.0,
+    "L6 CT": 0.9999999999999999,
+    "L6 IT": 1.0,
+    "L6b": 1.0,
+    "Lamp5": 1.0,
+    "Macrophage": 1.0,
+    "OPC": 0.9999999999999998,
+    "Oligo": 1.0,
+    "Pvalb": 1.0,
+    "Sncg": 0.9999999999999998,
+    "Sst": 1.0,
+    "Vip": 0.9999999999999998
+  },
+  "per_cell_corr_raw_nuc": {
+    "overall_median": 0.580809615603584,
+    "overall_mean": 0.578891624332288
+  },
+  "per_cell_corr_imp_vs_raw_nuc": {
+    "overall_median": 0.580809615603584
+  }
+}

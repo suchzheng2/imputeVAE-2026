@@ -1,0 +1,15 @@
+{
+  "run_dir": "run/run_2026-10-16_libsize_armA_jsd0.1_seed1",
+  "libsize_cond": true,
+  "decode_target": "ct_median_cell",
+  "latent_dims": 32,
+  "decode_check_max_abs_diff": 2.384185791015625e-06,
+  "r2_loglib_from_all_latents_within_ct": 0.6970531344413757,
+  "share_output_within_ct_var_removed_by_projecting_out_libsize": 0.002013437359757897,
+  "output_within_ct_var_sum": 61.50932576831668,
+  "nuclei_dims_total_var_gt_0p01": 4,
+  "nuclei_dims_within_var_gt_0p01": 4,
+  "nuclei_latent_pr_pooled_within": 3.024712295997555,
+  "cells_latent_pr_pooled_within": 2.2082395324389146,
+  "nuclei_latent_pr_total": 2.6471987949180438
+}

@@ -1,0 +1,11 @@
+{
+  "z_variance_decomp": {
+    "mean_between_frac": 0.9098789148130355,
+    "median_between_frac": 0.9262350358819655
+  },
+  "z_ablation": {
+    "mean_corr": 0.9945244909487407,
+    "mean_mse_change": 0.03836954088525518
+  },
+  "z_ablation_per_ct": {}
+}

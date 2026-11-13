@@ -1,0 +1,30 @@
+test 12640063 12640064 12640065 12640066 12640067 12640068 12640069
+test resubmit scvi1=12640388 eval2=12640389
+valid: 12640390 12640391 12640392 12640393 12640394 12640395 eval=12640396
+prelim eval: 12640399
+scvi seed1 resubmitted excluding bad node: 12640603
+test scvi0=12640607 final_eval=12640608 (12640389 cancelled)
+valid resubmit scvi0=12640614 scgen0=12640615 eval=12640616 (12640396 cancelled)
+test scvi seeds0-1 resubmit=12640835 final_eval=12640836 (12640608 cancelled)
+test scvi seed1 resubmit=12641010 final_eval=12641011 (12640836, 12640069 cancelled)
+cVAE seed replicates submitted: 12646907 (array 1-2)
+libfree redecode=12660719 eval=12660720
+valid libfree redecode=12676333 eval=12676334
+seed predict: 12686634 12686635 ; eval after seeds: 12686636
+seed2 nondeterminism check (3752550 -> cvae_seed2_attempt10): 13442607
+libsize covariate arms A(1)/B(2), seed 1: 13442818 (jobs/stage2/run_single_stage_cvae_libsize.sh)
+libsize arms A/B RESUBMITTED on pi_gerstein_gpu,scavenge_gpu: 13445566 (13442818 cancelled, est. start was 2026-10-20)
+arm A resubmitted with --gpus=2 + GPU guard (13445566_1 hit broken GPU 0000:31:00.0 on r813u29n03, cancelled): 13446475
+libsize arms benchmark predict (A/B x ct_median_cell,qmap,source): 13779998 13779999 13780000 13780001 13780002 13780003 ; eval after: 13780004
+libsize arms diagnostics (export+latent_usage+variance, array 1=A 2=B): 13780170 (jobs/eval/libsize_arm_diagnostics.sh)
+v2 cross-chemistry test of covariate arm A (array 0=paper rerun,1-4 arm A libraries): 13783381 (jobs/eval/run_cross_dataset_v2_libsize.sh)
+libsize arms dimensionality/libsize-R2 addon (array 1=A 2=B): 13783881
+latent-width control (covariate arm A config, array 1=8 dims 2=4 dims, seed 1): 13784373 (jobs/stage2/run_single_stage_cvae_libsize_latent.sh)
+label-free scale decodes of arm A (global_quantile_map=13819587, global_shift=13819588); quick eval -> results_libfree_scale: 13819596
+v2 cross-chemistry label-free modes (array 5=gqmap 6=gshift_v2 7=gshift_train): 13819589
+latent-width control predicts (latent8/4 x ct_median_cell,qmap,source,gqmap; training 13784373 done 2026-10-23 12:10): 13822181:13822182:13822183:13822184:13822185:13822186:13822187:13822188; full table rerun after all: 13822189
+kNN-latent label-free decodes of arm A (knn_cell_median=13822255, knn_quantile_map=13822256); quick eval 2 -> results_libfree_scale: 13822258; v2 array 8-10: 13822257; full eval 13822189 dependency extended
+full table rerun incl. knn rows (after 13822189 + knn predicts): 13822272; latent-width diagnostics (export+latent_usage+variance, array 3=latent8 4=latent4): 13822273 (jobs/eval/libsize_arm_diagnostics.sh)
+predicted-type label-free decodes of arm A (knn_type_median=13822363, knn_type_quantile_map=13822364); quick eval 3: 13822366; v2 array 11-12: 13822365; full eval 13822272 dependency extended
+latent-width quick eval -> run/benchmark/test/results_latent_width: 13823078
+latent-width dimensionality/libsize-R2 addon (array 3=latent8 4=latent4): 13823088

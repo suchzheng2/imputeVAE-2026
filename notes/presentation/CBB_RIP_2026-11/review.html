@@ -1,0 +1,111 @@
+<title>RIP Talk Review</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#f4f5f2;--panel:#ffffff;--ink:#1b1d21;--muted:#5f6469;--line:#d9dcd6;--accent:#2a78d6;--warn:#b4541a;--ok:#1f7a4d;--soft:#eef3fa}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#15171a;--panel:#1e2125;--ink:#e6e8e3;--muted:#9a9ea3;--line:#2c3035;--accent:#5a9ae6;--warn:#e08a52;--ok:#5cc08a;--soft:#232a33}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#15171a;--panel:#1e2125;--ink:#e6e8e3;--muted:#9a9ea3;--line:#2c3035;--accent:#5a9ae6;--warn:#e08a52;--ok:#5cc08a;--soft:#232a33}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,Arial,sans-serif;font-size:16px;line-height:1.5;padding-inline:16px;padding-block:0 56px}
+.wrap{max-width:1100px;margin:0 auto}
+h1{font-size:1.6rem;margin:28px 0 4px;text-wrap:balance} .sub{color:var(--muted);margin:0 0 24px}
+h2{font-size:1.25rem;margin:40px 0 10px;padding-top:14px;border-top:1px solid var(--line)} h3{font-size:1.05rem;margin:22px 0 6px}
+p{margin:0 0 10px;max-width:72ch} ul,ol{margin:0 0 12px;padding-left:22px;max-width:76ch} li{margin-bottom:4px}
+figure{margin:14px 0 18px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px} figure img{display:block;width:100%;height:auto;max-width:100%} figcaption{color:var(--muted);font-size:.9rem;margin-top:8px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 18px;margin:12px 0}
+.card h4{margin:0 0 6px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.notes{background:var(--soft);border-left:3px solid var(--accent);padding:10px 14px;margin:8px 0 14px;font-size:.95rem}
+table{border-collapse:collapse;width:100%;font-size:.93rem;margin:10px 0 16px} th,td{border:1px solid var(--line);padding:6px 9px;vertical-align:top;text-align:left} th{background:var(--soft);font-weight:600}
+.tbl{overflow-x:auto} .keep{color:var(--ok);font-weight:600} .cut{color:var(--warn);font-weight:600} .move{color:var(--accent);font-weight:600}
+code{font-size:.9em;background:var(--soft);padding:1px 5px;border-radius:3px}
+</style>
+<div class="wrap">
+<h1>CBB RIP talk: two new results, deck review, storyline</h1>
+<p class="sub">Review of <code>cbb-rip-talk-10-28-2026.pptx</code> (23 slides) against the recorded results, 2026-10-28. Figures are generated from the result tables, not recomputed. Script: <code>notes/presentation/CBB_RIP_2026-11/make_new_result_figures.py</code>; PNGs in <code>figures/</code>.</p>
+
+<h2>1. New result A: similarity to external RiboTag / TRAP profiles</h2>
+<p>Present it as three beats on two slides: one intro slide that says what the assay measures and what the comparison is, one result slide with the figure and the conclusion. It sits as tier 3 of your "biological validity" roadmap (slide 15), after SynGO and JASPAR, and it answers the committee's request (William's TRAP suggestion) directly.</p>
+
+<div class="card"><h4>Slide A1, intro: "Tier 3: an orthogonal assay. Ribosome-bound RNA from genetically defined populations"</h4>
+<ul>
+<li><b>What TRAP / RiboTag measures.</b> A tagged ribosomal protein is expressed in one cell type inside intact tissue; tagged ribosomes are pulled down and the bound mRNA sequenced. No dissociation, no nucleus-versus-cell split. Ribosome-bound mRNA is cytoplasmic by definition.</li>
+<li><b>Why it is a fair reference.</b> It never entered training, it is population-level (so it tests the cell-type-level claim, not per-cell), and it comes from other labs and other cortical regions.</li>
+<li><b>The comparison.</b> For each external population, map it to a training cell type, and compute the Spearman correlation of three per-type pseudobulk profiles with the external profile: raw nuclei, nuclei imputed by the model, real whole cells. Real cells set the ceiling an imputation could reach. 7,700 to 8,700 genes per comparison; gene and replicate bootstraps.</li>
+<li><b>Data.</b> 17 populations, 9 sequencing datasets from at least 6 labs: pan-excitatory, L5a and three L5b lines (two from motor cortex), Pvalb, Sst, Vip, Htr3a interneurons, astrocytes, oligodendrocytes. The 2008 microarray atlas is retired to a footnote.</li>
+</ul>
+<div class="notes"><b>Speaker notes.</b> William suggested ribosome profiling at the qual. TRAP and RiboTag pull ribosome-bound mRNA out of one genetically defined cell type in intact tissue, so they give a cytoplasmic, cell-type-resolved reference that has nothing to do with our training data. The question is simple: after imputation, does a nucleus profile look more like that type's ribosome-bound profile, and how close does it get to what real whole cells of that type achieve? Real cells are the ceiling; the number to watch is how much of the nucleus-to-cell gap imputation closes.</div></div>
+
+<figure><img src="figures/ripfig_trap_h2.png" alt="Dumbbell plot: for 17 external RiboTag/TRAP populations, Spearman similarity of raw nuclei (gray) and imputed (blue) pseudobulk with the external profile, with the real-cell ceiling as an orange tick; imputed reaches the ceiling in every row"><figcaption>Figure A. Data: <code>validation/trap_ribotag_external_validation/outputs/extension/figures/figE2_H2_all_datasets_data.csv</code>, post L5-mapping audit (Scnn1a L4 and Rbp4 pan-L5 excluded, 2026-09-24/25). Report: <code>outputs/report/extension_newer_datasets.md</code>.</figcaption></figure>
+
+<div class="card"><h4>Slide A2, result: "Imputation closes the nucleus-to-cell gap to external ribosome-bound profiles in every population"</h4>
+<p><b>Result.</b> Raw nuclei correlate 0.23 to 0.50 with the external profile; imputed nuclei 0.40 to 0.78; real cells 0.37 to 0.78. Median gap closed 0.99 (range 0.96 to 1.20); every gene-bootstrap and replicate-bootstrap interval excludes zero. The same holds for Pvalb and Sst in two independent RiboTag studies (0.43 to 0.73 with a ceiling of 0.74).</p>
+<p><b>Conclusion to say aloud.</b> The learned nucleus-to-cell shift is concordant with an independent measurement of cytoplasmic, translated RNA, for excitatory neurons, interneurons and glia. Glia sit lower because the reference itself is lower (small nuclear reference, known neuronal contamination of glial RiboTag), not because imputation fails there.</p>
+<p><b>Two caveats, one sentence each.</b> Ribosome-bound RNA measures translation, not steady-state cytoplasmic abundance, so this supports direction and rank, not absolute levels. And at pseudobulk level every method ties: CT-mean, linear regression, scVI, scANVI, scGen, scButterfly land within 0.03 of ImputeVAE (table below), so this validates the compartment shift itself, not the model over baselines. Say that yourself; it sets up the benchmark slide.</p>
+<div class="tbl"><table><tr><th>Class mean Spearman with external profile</th><th>raw nuclei</th><th>ImputeVAE</th><th>CT-mean</th><th>linear reg.</th><th>scVI</th><th>scANVI</th><th>scGen</th><th>scButterfly</th></tr>
+<tr><td>excitatory (5)</td><td>0.39</td><td>0.706</td><td>0.697</td><td>0.675</td><td>0.679</td><td>0.683</td><td>0.688</td><td>0.686</td></tr>
+<tr><td>inhibitory (9)</td><td>0.41</td><td>0.689</td><td>0.693</td><td>0.680</td><td>0.679</td><td>0.681</td><td>0.683</td><td>0.686</td></tr>
+<tr><td>glia (3)</td><td>0.33</td><td>0.493</td><td>0.471</td><td>0.553</td><td>0.480</td><td>0.493</td><td>0.468</td><td>0.431</td></tr></table></div>
+<div class="notes"><b>Speaker notes.</b> Gray is the raw nucleus, blue is the imputed nucleus, the orange tick is real whole cells. In all seventeen populations the imputed profile lands on the ceiling: the median gap closed is 0.99 and every confidence interval excludes zero. Excitatory, inhibitory and glial populations all behave the same way; glia are lower only because their reference is lower. Two things to keep in mind. Ribosome-bound RNA is translation, so this is a rank and direction test. And at this pseudobulk level a cell-type mean does as well as the model, so what this validates is that the nucleus-to-cell shift we learned is real biology. What the model adds over a mean is the next slide.</div></div>
+
+<h2>2. New result B: within-type variance distribution for L5 IT</h2>
+<p>This answers Prashant's September question ("is the low variance uniform flattening, or a scale change that keeps the same genes variable?"). Present it as the second beat of the variance story: the limitation slide first (variance ratio 0.15), then this figure, then the latent finding that explains the shape.</p>
+
+<div class="card"><h4>Slide B1, intro (can be the bottom of the limitation slide): "Is the lost variance a collapse or a scale change?"</h4>
+<ul>
+<li><b>The concern.</b> Within a cell type, imputed profiles carry 15 % of the real-cell variance. A model that assigns nearly the same value to every cell would show this too ("cheating": every gene ends up with the same low variance).</li>
+<li><b>The test.</b> Per cell type and gene, the within-type variance in real cells, raw nuclei and imputed cells (log1p scale, genes detected in more than 1 % of cells). Two readouts: the distribution of per-gene variances, and the Spearman rank correlation of a gene's variance in real cells against its variance in imputed cells. Reference: the same correlation between real cells and raw nuclei.</li>
+<li><b>Prediction.</b> Uniform flattening gives a narrow imputed distribution and a slope near zero. A scale change keeps the ranks and the shape.</li>
+</ul></div>
+
+<figure><img src="figures/ripfig_l5it_variance.png" alt="Left: density of log10 per-gene within-type variance in L5 IT for real cells, raw nuclei and imputed cells, imputed shifted lower and wider. Right: hexbin of real-cell versus imputed variance with Spearman 0.92 and the identity line"><figcaption>Figure B. L5 IT, 10,133 genes, 29,721 real cells, 11,599 nuclei, full-data cVAE. Data: <code>notes/experiments/variance_zero_nonzero_fullmodel/variance_rank/figures/V1_focus_distribution_and_rank_data.csv</code>; README in the same folder.</figcaption></figure>
+
+<div class="card"><h4>Slide B2, result: "The ranks are kept and the distribution is stretched: a scale change, not a collapse"</h4>
+<p><b>Result.</b> Medians: real cells 0.39, raw nuclei 0.21, imputed 0.08. Spearman of per-gene variance, real versus imputed: 0.92 (0.91 on well-detected genes), above the real-versus-nucleus reference of 0.72, and 0.80 when the real-cell target has Poisson and library-size variance removed. The imputed distribution is wider on the log scale (fitted slope 2.1): low-variance genes are compressed most (ratio 0.02 for genes detected in under 10 % of cells, 0.35 above 70 %). Same picture in Oligo (0.93) and in 14 of 17 types.</p>
+<p><b>Conclusion to say aloud.</b> The same genes are the high-variance genes; imputation lowers the scale, most for sparse genes, but does not flatten. So the variance loss is not an artefact of assigning one value to everyone. The structure of what remains is the real problem, and that is the next slide: the retained variance is almost one axis, library size.</p>
+<p><b>Caveat for questions.</b> Variance tracks mean on the log1p scale, so part of the rank agreement is inherited from mean agreement; after regressing out the mean the residual Spearman is 0.55 in L5 IT. And for the best-detected genes (above 70 %), which carry most biology, the within-bin correlation is only 0.47.</p>
+<div class="notes"><b>Speaker notes.</b> Left panel: the distribution of per-gene variance in L5 IT. Orange is real cells, gray nuclei, blue imputed. The imputed distribution is shifted down and stretched, not squeezed to a spike. Right panel: each gene's variance in real cells against its variance after imputation. Spearman 0.92, higher than the nucleus itself at 0.72, so the genes that vary most in real cells are the genes that vary most after imputation. The loss is a scale change concentrated on sparse genes. That ruled out flattening and pointed at what was really going on: nearly all of the variance that survives sits on a single axis, library size. That is the next slide.</div></div>
+
+<h2>2b. Figures for the other two placeholder slides</h2>
+<figure><img src="figures/ripfig_latent_finding.png" alt="Latent usage: 6 of 32 dimensions used, one is library size; imputed within-type variance 82 percent library size; latent-width control table"><figcaption>Latent finding (slide after the L5 IT variance slide). Data: <code>variance_zero_nonzero_fullmodel/latent_usage/per_dimension.csv</code>, F9 values, libsize review §6.7.</figcaption></figure>
+<figure><img src="figures/ripfig_generalisation.png" alt="Left: v2 unseen-chemistry ladder 0.59 to 0.93; right: Bakken 2018 predicted vs empirical delta, r 0.58, ceiling 0.92"><figcaption>Generalisation slide. Bakken pooled over 11 clusters × 8,928 genes (r 0.58, the recorded definition); reliability ceiling from <code>delta_reliability_exon_intron.json</code>. v2 numbers from libsize review §6.4a.</figcaption></figure>
+
+<h2>3. Deck review, slide by slide</h2>
+<p>The draft is 23 slides and about 11 of them are background or method description. For 20 minutes with peers, background should be 4 to 5 slides and the results about 10. The bigger issue is that the second half is still the August follow-up deck: an "Aim 1" validation plan, a results recap with superseded claims, and a future-plan summary whose Aim 2 and Aim 3 were changed in October.</p>
+<div class="tbl"><table>
+<tr><th>#</th><th>Slide</th><th>Verdict</th><th>Why / what to do</th></tr>
+<tr><td>1</td><td>Title</td><td class="keep">keep</td><td>Replace the notes: they are the August follow-up script (jury duty, future plan). Open with the question in the title.</td></tr>
+<tr><td>2</td><td>snRNA-seq dominates</td><td class="keep">keep</td><td>Good opener. Fold the "unlock 2.8M nuclei" message from slide 11 into the notes here.</td></tr>
+<tr><td>3</td><td>A nucleus isn't a smaller cell</td><td class="keep">keep</td><td>The three properties are the setup for everything later.</td></tr>
+<tr><td>4</td><td>RNA localization (Malat1, Camk2a)</td><td class="keep">keep</td><td>Best background slide. Point at Malat1/Neat1 and say "these are the genes the model must send down"; it pays off on the lncRNA and COMPARTMENTS checks.</td></tr>
+<tr><td>5</td><td>Gap varies by cell type</td><td class="cut">cut</td><td>Repeats the third bullet of slide 3. One sentence on slide 3 covers it.</td></tr>
+<tr><td>6</td><td>Pseudobulk / DESeq2</td><td class="cut">cut (backup)</td><td>Peers know DESeq2; the limitation list is all that matters and it belongs in one line on the batch-correction slide.</td></tr>
+<tr><td>7</td><td>Batch correction: assumptions</td><td class="move">merge into 8</td><td>Keep the three assumptions as the left column of slide 8.</td></tr>
+<tr><td>8</td><td>Batch correction: limitations</td><td class="keep">keep (one slide)</td><td>This is the "why not scVI" slide. The scVI over-correction line is a good concrete hook.</td></tr>
+<tr><td>9, 10</td><td>scGen, scButterfly</td><td class="cut">cut (backup)</td><td>Directed-transformation methods are best introduced as rows of the benchmark table, not two architecture slides. Keep one sentence: "scGen and scButterfly learn a map; so do we; here is how we differ."</td></tr>
+<tr><td>11</td><td>Tasks</td><td class="cut">cut</td><td>Carries stale all-data numbers (96.3 %, 77.5 %, GO p-values). The three tasks are fine as spoken framing on slide 2 and return on the open-question slide.</td></tr>
+<tr><td>12, 13</td><td>Method</td><td class="keep">keep</td><td>Keep 12; 13 is the right half of 12 and can be a click. Add two words to the caption: single-stage training, library-size covariate, no labels at inference.</td></tr>
+<tr><td>14</td><td>Results recap (A/B/C)</td><td class="cut">replace</td><td>Panel A's claim "better than most baselines" is the all-data comparison; the split-aware benchmark says label-free best, label-using at the ceiling. Replace with the benchmark ladder slide. Panel B (shift agreement) is slide 16/19's content. Panel C (variance compressed) moves to the variance section as the limitation slide.</td></tr>
+<tr><td>15</td><td>Validation roadmap (3 tiers)</td><td class="keep">keep, retitle</td><td>Good structure. Drop "Aim 1"; name the tiers: internal fidelity, annotation-based plausibility, orthogonal assay. Tier 3 is now done (TRAP), so the slide is a map of results, not a plan.</td></tr>
+<tr><td>16</td><td>Validity 1: internal shift fidelity</td><td class="move">merge into 19</td><td>The table says "strongly concordant" without a number. Slide 19 already has the numbers; show the scatter once with the per-type panel.</td></tr>
+<tr><td>17, 18</td><td>SynGO and JASPAR descriptions</td><td class="move">merge into one</td><td>Two columns: SynGO = positive set, JASPAR TFs = contrast set, each with its hypothesis. One slide, 60 seconds.</td></tr>
+<tr><td>19</td><td>SynGO slope</td><td class="keep">keep</td><td>Main tier-2 result.</td></tr>
+<tr><td>20</td><td>SynGO subgroups</td><td class="cut">cut if short</td><td>Supporting detail; mention in the notes of 19.</td></tr>
+<tr><td>21</td><td>SynGO vs TF</td><td class="keep">keep</td><td>The specificity point. Add one line on the nuclear lncRNA list (45 genes, all negative) so the restraint direction is shown too.</td></tr>
+<tr><td>new</td><td>TRAP/RiboTag intro + result (A1, A2)</td><td class="keep">insert after 21</td><td>Tier 3 of the roadmap.</td></tr>
+<tr><td>new</td><td>Benchmark ladder</td><td class="keep">insert after the method</td><td>Ceiling 0.981 (CT-mean), scGen 0.975, ImputeVAE predicted-type 0.962, no labels anywhere 0.921, no-covariate 0.900, scVI/scANVI label-free 0.86. Split-aware test numbers only.</td></tr>
+<tr><td>new</td><td>Variance: limitation, L5 IT (B1, B2), latent finding</td><td class="keep">insert after TRAP</td><td>Three slides: the 0.15 ratio, the rank/stretch figure, then "the retained variance is one library-size axis; 2 to 4 identity dims; covariate model". This is where the talk becomes yours, not a validation list.</td></tr>
+<tr><td>new</td><td>Generalisation (v2 chemistry, Bakken hold-out)</td><td class="keep">insert, one slide</td><td>Show the ceiling and the "predicted type + mean shift" baseline on the same axis. Human M1 (from the follow-up deck) fits here as a second panel if time allows.</td></tr>
+<tr><td>22</td><td>Future plan summary (Aims 1-3)</td><td class="cut">replace</td><td>Aim 2 (variance losses) was dropped on 2026-10-23 and Aim 3's EGA bulk route was replaced by the SCORCH nuclei-only set. Replace with the open-question slide: which nuclei-only result changes after imputation, three candidates, ask the room.</td></tr>
+<tr><td>23</td><td>Thank you</td><td class="keep">keep</td><td>Put 6, 7, 9, 10 after it as backups.</td></tr>
+</table></div>
+<p><b>Resulting order (19 main slides).</b> 1 title; 2, 3, 4 background; 8 why not batch correction; 12 method; benchmark ladder; 15 validation roadmap; 17+18 datasets; 19 shift fidelity; 21 SynGO vs TF (+ lncRNA line); A1, A2 TRAP; variance limitation (panel C of 14); B2 L5 IT variance; latent finding; generalisation; open question; thank you; backups 6, 7, 9, 10, 20.</p>
+
+<h2>4. Storyline</h2>
+<p>The draft still tells the August story: "here is a model, here is my validation plan in three aims, here is the future plan." For a research-in-progress talk the stronger story is the one your title already states, and it has four moves:</p>
+<ol>
+<li><b>The gap is biology, not noise</b> (slides 2 to 4, then 8 as the contrast). The nucleus holds a structured, gene-specific, cell-type-dependent subset of the cell's RNA.</li>
+<li><b>We learned that map and checked it against things we never trained on</b> (method, validation roadmap, SynGO/TF, TRAP). Direction and rank are right; cell-type specificity is right; an orthogonal assay agrees.</li>
+<li><b>What the instrument is and is not</b> (benchmark, variance, latent finding). Best label-free translator; with labels a type mean is the ceiling; the variance "loss" is a scale change on a single library-size axis; at 10x depth a nucleus determines its type-level cytoplasm plus its RNA content, not its individual cytoplasm. Present this as the finding of the summer, not as a limitation you are apologising for.</li>
+<li><b>Therefore the contribution is the applied map, and the open question is where it changes a result</b> (generalisation, then the ask).</li>
+</ol>
+<p><b>Three things to change in how you say it.</b> First, retire "better than most baselines" and "population-level recovery"; say "best label-free, ceiling with labels" and own it before the audience does. Second, when you show TRAP, say in the same breath that a cell-type mean would score the same there; it makes the benchmark slide land as the honest answer rather than a retreat. Third, drop the "Aim" vocabulary throughout; it signals a proposal, and this is a progress talk whose aims have already moved.</p>
+<p><b>Two numbers to keep out of the talk.</b> The all-data scVI gene correlation of 0.386 (superseded by 0.86) and the 96.3 % classification figure on slide 11. Both are from the comparison that CLAUDE.md says not to quote.</p>
+</div>

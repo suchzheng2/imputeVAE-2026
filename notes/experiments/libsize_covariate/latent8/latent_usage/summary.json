@@ -1,0 +1,15 @@
+{
+  "run_dir": "run/run_2026-10-23_libsize_armA_latent8_seed1",
+  "libsize_cond": true,
+  "decode_target": "ct_median_cell",
+  "latent_dims": 8,
+  "decode_check_max_abs_diff": 2.1457672119140625e-06,
+  "r2_loglib_from_all_latents_within_ct": 0.2076420783996582,
+  "share_output_within_ct_var_removed_by_projecting_out_libsize": -0.001452907170401252,
+  "output_within_ct_var_sum": 9.530837270658095,
+  "nuclei_dims_total_var_gt_0p01": 2,
+  "nuclei_dims_within_var_gt_0p01": 2,
+  "nuclei_latent_pr_pooled_within": 1.7229489892052188,
+  "cells_latent_pr_pooled_within": 1.9616515917394812,
+  "nuclei_latent_pr_total": 1.99496659830887
+}
