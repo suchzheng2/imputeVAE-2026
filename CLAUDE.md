@@ -15,6 +15,14 @@ This project runs on a cluster where `~/` (including `~/.claude/`) is wiped betw
 4. **Settings:** If `.claude/settings.local.json` changes, write back to repo `.claude/`
 5. **Notes:** All project notes go in `notes/` directory (version-controlled)
 
+### Git / GitHub (since 2026-11-13)
+
+The project folder is a git repository: `origin = git@github.com:suchzheng2/imputeVAE-2026.git`, branch `main`
+(SSH key on the cluster authenticates as suchzheng2). Tracked: code, job scripts, `data/` small lists + split manifest,
+`notes/` (markdown, figures, tables < 10 MB), `.memory/`, `.claude/`. Ignored: `run/`, `cache/`, `jobs/logs/`, large
+data, validation outputs, binary arrays (see `.gitignore`). Commit and push only when the user asks ("update my
+github"); never add files from `run/` or `jobs/logs/`.
+
 ---
 
 VAE-based imputation for single-cell RNA-seq: learning to translate between cell and nucleus expression profiles.

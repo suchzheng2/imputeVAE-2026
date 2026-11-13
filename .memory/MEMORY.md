@@ -6,6 +6,7 @@
 - **Platform:** HPC cluster (SLURM), partition `pi_gerstein`, `scavenge_gpu`, `priority_gpu`
 - **Default partition:** `scavenge` (user preference — always use scavenge unless specified)
 - **GPU jobs needing 400G:** use `--partition=pi_gerstein_gpu,scavenge_gpu` — `pi_gerstein_gpu` is group-owned, non-preemptible, includes r813u29n03 (1 TB, 4×A100); scavenge_gpu alone waited 4 days for a 400G slot (2026-10-16). The cVAE full-data config peaks at 326 GiB RSS. **r813u29n03 GPU 0000:31:00.0 is broken** (nvidia-smi Unknown Error; training silently falls back to CPU) — submit there with `--gpus=2`; the libsize job script has a healthy-GPU guard to copy.
+- **GitHub:** `git@github.com:suchzheng2/imputeVAE-2026.git` (created 2026-11-13, branch main, first commit d802338; push only on request; run/ cache/ logs/ large data ignored)
 - **Script path note:** Scripts are at `analysis/` relative to project root
 
 ## Benchmark Redo (2026-10-09) — DONE incl. cVAE seed replicates (2026-10-12; 24 method dirs)
